@@ -1,6 +1,6 @@
 # COMSYS-HAckhathon: AI-Powered Mental Health Classification & Football Player Valuation
 
-[![Hackathon Ranking](https://img.shields.io/badge/Hackathon-Top%2012-brightgreen)](https://comsysconf.org/) [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/) 
+[![Hackathon Ranking](https://img.shields.io/badge/Hackathon-Top%2012-brightgreen)](https://comsysconf.org/) [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/) [![Scikit-learn](https://img.shields.io/badge/Scikit-learn-1.3%2B-orange)](https://scikit-learn.org/) [![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-2025-purple)](https://hacktoberfest.com/)
 
 ## 🎯 Project Overview
 
@@ -61,13 +61,13 @@ Achieved 87% weighted F1-score, outperforming trees (64%) due to sparsity handli
 For player valuation, SVR minimizes errors while controlling complexity:
 
 $$
-\min_{w, b, \xi, \xi^{*}} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^{n} (\xi_{i} + \xi_{i}^{*})
+\min_{w, b, \xi, \xi^*} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^n (\xi_i + \xi_i^*)
 $$
 
 Subject to:
 
 $$
-y_i - (w \cdot \phi(x_i) + b) \leq \epsilon + \xi_{i}, \quad (w \cdot \phi(x_i) + b) - y_i \leq \epsilon + \xi_{i}^{*}
+y_i - (w \cdot \phi(x_i) + b) \leq \epsilon + \xi_i, \quad (w \cdot \phi(x_i) + b) - y_i \leq \epsilon + \xi_i^*
 $$
 
 - \(\phi\): RBF kernel for non-linearity.
@@ -126,6 +126,8 @@ jupyter notebook "Value Prediction using svr..."  # Predicts values, saves to Va
 ## 🤝 Contributing
 We welcome PRs! Fork, branch, and submit. Focus on ethical AI enhancements (e.g., bias audits).
 
+## 📄 License
+MIT License – Free to use, modify, and distribute.
 
 ## 🌟 Acknowledgments
 - #COMSYS-HAckhathon organizers for the inspiring challenge.
