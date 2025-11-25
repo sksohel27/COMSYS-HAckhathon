@@ -4,7 +4,7 @@
 Welcome to our **COMSYS-HAckhathon** submission! This repository showcases a dual ML pipeline built during the hackathon:
 1. **Mental Health Disorder Classification**: A multiclass text classifier that analyzes patient statements to detect disorders like Anxiety, Depression, and more—promoting early mental health intervention.
 2. **Football Player Market Value Prediction**: A regression model forecasting player valuations based on performance stats, blending sports analytics with AI.
-We ranked **Top 12** out out of 150+ teams in the #COMSYS-HAckhathon, earning accolades for innovative use of NLP and regression techniques on real-world datasets. This project demonstrates end-to-end ML workflows, from data preprocessing to model deployment, emphasizing interpretability and scalability.
+We ranked **Top 12** out of 150+ teams in the #COMSYS-HAckhathon, earning accolades for innovative use of NLP and regression techniques on real-world datasets. This project demonstrates end-to-end ML workflows, from data preprocessing to model deployment, emphasizing interpretability and scalability.
 ## 🚀 Key Features
 - **Text Classification Pipeline**:
   - Preprocessing: Tokenization, lemmatization, and stopword removal.
@@ -21,47 +21,35 @@ We ranked **Top 12** out out of 150+ teams in the #COMSYS-HAckhathon, earning ac
 ## 🧮 Theoretical Foundations
 ### 1. TF-IDF Vectorization (Text Classification)
 TF-IDF transforms text into numerical features, weighting terms by importance:
-
 $$
 \text{TF-IDF}(t, d, D) = \text{TF}(t, d) \times \log\left(\frac{|D|}{|\{d \in D : t \in d\}|}\right)
 $$
-
 Where:
-- $\text{TF}(t, d)$: Term frequency in document $d$.
-- $|D|$: Total documents.
-- $|\{d \in D : t \in d\}|$: Documents containing term $t$.
+- \(\text{TF}(t, d)\): Term frequency in document \(d\).
+- \(|D|\): Total documents.
+- \(|\{d \in D : t \in d\}|\): Documents containing term \(t\).
 This reduces noise, highlighting disorder-specific keywords (e.g., "panic" for Panic Disorder).
 ### 2. Multinomial Naive Bayes (Best Classifier)
 Probabilistic prediction via Bayes' Theorem, assuming feature independence:
-
 $$
 P(c|d) = \frac{P(d|c) \cdot P(c)}{P(d)} \propto P(c) \prod_{i=1}^{n} P(t_i|c)
 $$
-
-- $c$: Class (e.g., "Depression").
-- $d$: Document.
-- $t_i$: Terms in $d$.
+- \(c\): Class (e.g., "Depression").
+- \(d\): Document.
+- \(t_i\): Terms in \(d\).
 Achieved 87% weighted F1-score, outperforming trees (64%) due to sparsity handling.
 ### 3. Support Vector Regression (SVR) Objective
 For player valuation, SVR minimizes errors while controlling complexity:
-
 $$
-\min_{w, b, \xi, \xi^*} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^{n} (\xi_i + \xi_i^*)
+\min_{w, b, \xi, \xi^{*}} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^{n} (\xi_i + \xi_i^{*})
 $$
-
 Subject to:
-
 $$
-y_i - (w \cdot \phi(x_i) + b) \leq \epsilon + \xi_i
+y_i - (w \cdot \phi(x_i) + b) \leq \epsilon + \xi_i, \quad (w \cdot \phi(x_i) + b) - y_i \leq \epsilon + \xi_i^{*}
 $$
-
-$$
-(w \cdot \phi(x_i) + b) - y_i \leq \epsilon + \xi_i^*
-$$
-
-- $\phi$: RBF kernel for non-linearity.
-- $C=1000$, $\gamma=0.1$: Tuned params for robust predictions on skewed targets.
-Feature importance: $w_j$ coefficients rank stats like "Age" and "Assists" highest.
+- \(\phi\): RBF kernel for non-linearity.
+- \(C=1000\), \(\gamma=0.1\): Tuned params for robust predictions on skewed targets.
+Feature importance: \(w_j\) coefficients rank stats like "Age" and "Assists" highest.
 ## 📊 Results Snapshot
 ### Mental Health Classification Report (Naive Bayes)
 | Class                  | Precision | Recall | F1-Score | Support |
