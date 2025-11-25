@@ -45,9 +45,6 @@ Achieved 87% weighted F1-score, outperforming trees (64%) due to sparsity handli
 ### 3. Support Vector Regression (SVR) Objective
 For player valuation, SVR minimizes errors while controlling complexity:
 
-$$
-\min_{w, b, \xi, \xi^*} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^{n} (\xi_i + \xi_i^*)
-$$
 
 Subject to:
 
