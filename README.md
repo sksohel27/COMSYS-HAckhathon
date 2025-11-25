@@ -1,6 +1,6 @@
 # COMSYS-HAckhathon: AI-Powered Mental Health Classification & Football Player Valuation
 
-[![Hackathon Ranking](https://img.shields.io/badge/Hackathon-Top%2012-brightgreen)](https://comsysconf.org/) [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/) [![Scikit-learn](https://img.shields.io/badge/Scikit-learn-1.3%2B-orange)](https://scikit-learn.org/) [![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-2025-purple)](https://hacktoberfest.com/)
+[![Hackathon Ranking](https://img.shields.io/badge/Hackathon-Top%2012-brightgreen)](https://comsysconf.org/) [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/) 
 
 ## 🎯 Project Overview
 
