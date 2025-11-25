@@ -1,6 +1,6 @@
 # COMSYS-HAckhathon: AI-Powered Mental Health Classification & Football Player Valuation
 
-[![Hackathon Ranking](https://img.shields.io/badge/Hackathon-Top%2012-brightgreen)](https://comsys-hackhathon.example.com) [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/) [![Scikit-learn](https://img.shields.io/badge/Scikit-learn-1.3%2B-orange)](https://scikit-learn.org/) [![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-2025-purple)](https://hacktoberfest.com/)
+[![Hackathon Ranking](https://img.shields.io/badge/Hackathon-Top%2012-brightgreen)](https://comsysconf.org/) [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/) [![Scikit-learn](https://img.shields.io/badge/Scikit-learn-1.3%2B-orange)](https://scikit-learn.org/) [![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-2025-purple)](https://hacktoberfest.com/)
 
 ## 🎯 Project Overview
 
@@ -33,9 +33,9 @@ We ranked **Top 12** out of 150+ teams in the #COMSYS-HAckhathon, earning accola
 ### 1. TF-IDF Vectorization (Text Classification)
 TF-IDF transforms text into numerical features, weighting terms by importance:
 
-\[
+$$
 \text{TF-IDF}(t, d, D) = \text{TF}(t, d) \times \log\left(\frac{|D|}{|\{d \in D : t \in d\}|}\right)
-\]
+$$
 
 Where:
 - \(\text{TF}(t, d)\): Term frequency in document \(d\).
@@ -47,9 +47,9 @@ This reduces noise, highlighting disorder-specific keywords (e.g., "panic" for P
 ### 2. Multinomial Naive Bayes (Best Classifier)
 Probabilistic prediction via Bayes' Theorem, assuming feature independence:
 
-\[
+$$
 P(c|d) = \frac{P(d|c) \cdot P(c)}{P(d)} \propto P(c) \prod_{i=1}^{n} P(t_i|c)
-\]
+$$
 
 - \(c\): Class (e.g., "Depression").
 - \(d\): Document.
@@ -60,14 +60,15 @@ Achieved 87% weighted F1-score, outperforming trees (64%) due to sparsity handli
 ### 3. Support Vector Regression (SVR) Objective
 For player valuation, SVR minimizes errors while controlling complexity:
 
-\[
+$$
 \min_{w, b, \xi, \xi^*} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^{n} (\xi_i + \xi_i^*)
-\]
+$$
 
 Subject to:
-\[
+
+$$
 y_i - (w \cdot \phi(x_i) + b) \leq \epsilon + \xi_i, \quad (w \cdot \phi(x_i) + b) - y_i \leq \epsilon + \xi_i^*
-\]
+$$
 
 - \(\phi\): RBF kernel for non-linearity.
 - \(C=1000\), \(\gamma=0.1\): Tuned params for robust predictions on skewed targets.
@@ -77,6 +78,7 @@ Feature importance: \(w_j\) coefficients rank stats like "Age" and "Assists" hig
 ## 📊 Results Snapshot
 
 ### Mental Health Classification Report (Naive Bayes)
+
 | Class                          | Precision | Recall | F1-Score | Support |
 |--------------------------------|-----------|--------|----------|---------|
 | Anger/IED                      | 0.86      | 0.83   | 0.84     | 154     |
@@ -116,8 +118,10 @@ python player_valuation.py  # Predicts values, saves to Value_prediction_grid.cs
 ```
 
 ### Datasets
-- Mental Health: `train.csv` (text + labels), `test.csv` (text only).
-- Football: `train.csv` (stats + values), `test.csv` (stats only). Sources: Public Kaggle datasets.
+- **Note**: Due to hackathon privacy rules and data sharing restrictions, the original datasets (`train.csv` and `test.csv` for both tasks) are not included in this repository.
+- **Mental Health**: Simulated with anonymized text data for multiclass classification. For similar public datasets, check Kaggle's "Mental Health in Tech" or "Depression Detection" datasets.
+- **Football**: Based on player performance stats for regression. Replicate with public sources like Kaggle's "European Soccer Database" or Transfermarkt exports (ensure compliance with usage terms).
+- To run the code, generate or download compatible CSV files matching the expected schema (e.g., 'Text'/'label' for classification; stats columns + 'Value at beginning of 2023/24 season' for regression).
 
 ## 🤝 Contributing
 We welcome PRs! Fork, branch, and submit. Focus on ethical AI enhancements (e.g., bias audits).
