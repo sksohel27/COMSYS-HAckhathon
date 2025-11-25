@@ -61,13 +61,13 @@ Achieved 87% weighted F1-score, outperforming trees (64%) due to sparsity handli
 For player valuation, SVR minimizes errors while controlling complexity:
 
 $$
-\min_{w, b, \xi, \xi^*} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^{n} (\xi_i + \xi_i^*)
+\min_{w, b, \xi, \xi^{*}} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^{n} (\xi_{i} + \xi_{i}^{*})
 $$
 
 Subject to:
 
 $$
-y_i - (w \cdot \phi(x_i) + b) \leq \epsilon + \xi_i, \quad (w \cdot \phi(x_i) + b) - y_i \leq \epsilon + \xi_i^*
+y_i - (w \cdot \phi(x_i) + b) \leq \epsilon + \xi_{i}, \quad (w \cdot \phi(x_i) + b) - y_i \leq \epsilon + \xi_{i}^{*}
 $$
 
 - \(\phi\): RBF kernel for non-linearity.
@@ -102,19 +102,19 @@ Feature importance: \(w_j\) coefficients rank stats like "Age" and "Assists" hig
 
 ### Installation
 ```bash
-git clone https://github.com/yourusername/comsys-hackathon.git
-cd comsys-hackathon
+git clone https://github.com/sksohel27/COMSYS-HAckhathon.git
+cd COMSYS-HAckhathon
 pip install -r requirements.txt
 ```
 
 ### Run Classification
-```python
-python mental_health_classifier.py  # Trains & predicts on train.csv/test.csv
+```bash
+jupyter notebook "Text_classification running-..."  # Trains & predicts on train.csv/test.csv (replace with exact filename)
 ```
 
 ### Run Regression
-```python
-python player_valuation.py  # Predicts values, saves to Value_prediction_grid.csv
+```bash
+jupyter notebook "Value Prediction using svr..."  # Predicts values, saves to Value_prediction_grid.csv (replace with exact filename)
 ```
 
 ### Datasets
@@ -126,16 +126,14 @@ python player_valuation.py  # Predicts values, saves to Value_prediction_grid.cs
 ## 🤝 Contributing
 We welcome PRs! Fork, branch, and submit. Focus on ethical AI enhancements (e.g., bias audits).
 
-## 📄 License
-MIT License – Free to use, modify, and distribute.
 
 ## 🌟 Acknowledgments
 - #COMSYS-HAckhathon organizers for the inspiring challenge.
 - Scikit-learn & NLTK teams for robust tools.
-- Our team: [Your Name] – Lead ML Engineer.
+- Our team: sksohel27 – Lead ML Engineer.
 
 ---
 
 *Built with ❤️ during #COMSYS-HAckhathon. Let's AI for good! 🚀* 
 
-[Star this repo](https://github.com/yourusername/comsys-hackathon) if it sparks ideas!
+[Star this repo](https://github.com/sksohel27/COMSYS-HAckhathon) if it sparks ideas!
